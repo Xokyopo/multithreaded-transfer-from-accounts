@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration>
+    <Properties>
+        <Property name="filename" value="multithreaded-transfer-from-accounts.log"/>
+        <Property name="logPatterns" value="%d{HH:mm:ss.SSS} [%t] %-5level %logger{36} - %msg%n"/>
+        <Property name="logLevel" value="info"/>
+    </Properties>
+    <Appenders>
+        <File name="File" fileName="${filename}">
+            <PatternLayout pattern="${logPatterns}"/>
+        </File>
+        <Console name="Console">
+            <PatternLayout pattern="${logPatterns}"/>
+        </Console>
+    </Appenders>
+    <Loggers>
+        <Logger name="RandomTransferManager" level="all" additivity="false">
+            <AppenderRef ref="Console"/>
+        </Logger>
+        <Root level="${logLevel}">
+            <AppenderRef ref="File"/>
+        </Root>
+    </Loggers>
+</Configuration>
