@@ -9,8 +9,14 @@
         <File name="File" fileName="${filename}">
             <PatternLayout pattern="${logPatterns}"/>
         </File>
+        <Console name="Console">
+            <PatternLayout pattern="${logPatterns}"/>
+        </Console>
     </Appenders>
     <Loggers>
+        <Logger name="RandomTransferManager" level="all" additivity="false">
+            <AppenderRef ref="Console"/>
+        </Logger>
         <Root level="${logLevel}">
             <AppenderRef ref="File"/>
         </Root>
