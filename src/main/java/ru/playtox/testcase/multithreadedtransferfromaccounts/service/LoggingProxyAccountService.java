@@ -8,7 +8,7 @@ import ru.playtox.testcase.multithreadedtransferfromaccounts.dao.WriteWithoutLoc
 
 public class LoggingProxyAccountService extends AccountService {
 
-    private static final Logger LOG = LogManager.getLogger(AccountService.class);
+    private static final Logger LOG = LogManager.getLogger(AccountService.class.getSimpleName());
 
     public LoggingProxyAccountService(AccountRepository repository) {
         super(repository);
