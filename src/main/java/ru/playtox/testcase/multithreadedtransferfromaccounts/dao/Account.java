@@ -43,4 +43,12 @@ public class Account extends ReentrantReadWriteLock {
                 ", money=" + money +
                 '}';
     }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Account account = (Account) o;
+        return getId().equals(account.getId());
+    }
 }
